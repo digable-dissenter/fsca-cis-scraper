@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSCA Analytics Dashboard & Geolocator</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --success: #10b981;
+            --danger: #ef4444;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        h1, h2, h3, .brand {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            background: rgba(17, 24, 39, 0.85);
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(12px);
+            z-index: 10;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .brand-logo {
+            width: 2.2rem;
+            height: 2.2rem;
+            background: linear-gradient(135deg, var(--primary), var(--success));
+            border-radius: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+        }
+
+        .brand-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #ffffff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Main Dashboard Area */
+        .dashboard-container {
+            display: flex;
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Sidebar Panels */
+        .sidebar {
+            width: 380px;
+            background: var(--card-bg);
+            border-right: 1px solid var(--border-color);
+            backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            gap: 1.5rem;
+            z-index: 5;
+            overflow-y: auto;
+        }
+
+        .sidebar-section {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 0.8rem;
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        input, select, button {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.6rem 0.8rem;
+            border-radius: 0.4rem;
+            font-size: 0.9rem;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 8px rgba(99, 102, 241, 0.2);
+        }
+
+        button.btn-primary {
+            background: var(--primary);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+        }
+
+        button.btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 0.6rem;
+            padding: 0.8rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            margin-bottom: 0.2rem;
+        }
+
+        .stat-value.compliant { color: var(--success); }
+        .stat-value.non-compliant { color: var(--danger); }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        /* Map Container */
+        .map-container {
+            flex: 1;
+            position: relative;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+            background-color: #121620;
+        }
+
+        /* Custom Popup Styles */
+        .leaflet-popup-content-wrapper {
+            background: rgba(17, 24, 39, 0.95) !important;
+            color: var(--text-main) !important;
+            border: 1px solid var(--border-color);
+            border-radius: 0.8rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .leaflet-popup-tip {
+            background: rgba(17, 24, 39, 0.95) !important;
+        }
+
+        .popup-header {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.4rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .popup-body {
+            font-size: 0.85rem;
+            line-height: 1.4;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.15rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            width: fit-content;
+        }
+
+        .badge-success {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .badge-danger {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--danger);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        /* Results List Panel */
+        .results-panel {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .result-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 0.6rem;
+            padding: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .result-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--primary);
+        }
+
+        .result-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .result-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-container">
+            <div class="brand-logo">FS</div>
+            <div class="brand-title">FSCA Geolocator & Analytics</div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        
+        <!-- Left Sidebar Controls -->
+        <div class="sidebar">
+            
+            <!-- Overall Stats -->
+            <div class="sidebar-section">
+                <div class="section-title">Overview</div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value compliant" id="stat-compliant">-</div>
+                        <div class="stat-label">Compliant</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value non-compliant" id="stat-non-compliant">-</div>
+                        <div class="stat-label">Non-Compliant</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Controls -->
+            <div class="sidebar-section">
+                <div class="section-title">Experience Settings</div>
+                <div class="form-group">
+                    <label for="ki-exp">Key Individuals (Months)</label>
+                    <input type="number" id="ki-exp" value="12" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="rep-exp">Representatives (Months)</label>
+                    <input type="number" id="rep-exp" value="12" min="0">
+                </div>
+            </div>
+
+            <!-- Geolocator Panel -->
+            <div class="sidebar-section">
+                <div class="section-title">Geolocator Search</div>
+                <div class="form-group">
+                    <label for="postal-code">Post Code / Name Search</label>
+                    <input type="text" id="search-query" placeholder="e.g. 7700 or Catherine">
+                </div>
+                <button class="btn-primary" onclick="searchFSPs()">Search Registry</button>
+            </div>
+
+            <!-- FSP Search Results -->
+            <div class="sidebar-section" style="flex: 1; display: flex; flex-direction: column;">
+                <div class="section-title">Matching Advisors / FSPs</div>
+                <div class="results-panel" id="results-list">
+                    <div style="color: var(--text-muted); font-size: 0.85rem; text-align: center; margin-top: 2rem;">
+                        No searches run yet. Enter coordinates or click search.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Leaflet Map Panel -->
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+
+    </div>
+
+    <!-- Leaflet Map JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <script>
+        // Initialize Map centered around South Africa Cape Town Observatory
+        const map = L.map('map').setView([-33.935, 18.472], 12);
+        
+        // Premium Dark CartoDB Map Tiles
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(map);
+
+        // Marker layer group
+        const markerGroup = L.layerGroup().addTo(map);
+
+        // Load stats on bootstrap
+        async function loadStats() {
+            try {
+                const res = await fetch('/api/stats');
+                const data = await res.json();
+                document.getElementById('stat-compliant').innerText = data.compliant_fsps;
+                document.getElementById('stat-non-compliant').innerText = data.non_compliant_fsps;
+            } catch (err) {
+                console.error("Failed to load stats:", err);
+            }
+        }
+
+        // Search and Geolocation
+        async function searchFSPs() {
+            const query = document.getElementById('search-query').value.strip ? 
+                          document.getElementById('search-query').value.trim() : 
+                          document.getElementById('search-query').value;
+                          
+            const kiExp = document.getElementById('ki-exp').value;
+            const repExp = document.getElementById('rep-exp').value;
+            
+            // Build URL
+            let url = `/api/fsps?ki_exp=${kiExp}&rep_exp=${repExp}`;
+            if (query) {
+                // If query is numeric, assume postal code
+                if (/^\d+$/.test(query)) {
+                    url += `&postal_code=${query}`;
+                } else {
+                    url += `&query=${encodeURIComponent(query)}`;
+                }
+            }
+            
+            try {
+                const res = await fetch(url);
+                const fsps = await res.json();
+                renderResults(fsps);
+            } catch (err) {
+                console.error("Failed to search:", err);
+            }
+        }
+
+        // Map Click Geolocator: Click map to search within 15km radius
+        map.on('click', async function(e) {
+            const lat = e.latlng.lat;
+            const lng = e.latlng.lng;
+            const kiExp = document.getElementById('ki-exp').value;
+            const repExp = document.getElementById('rep-exp').value;
+            
+            // Add a temporary radius circle
+            markerGroup.clearLayers();
+            L.circle([lat, lng], {
+                color: '#6366f1',
+                fillColor: '#6366f1',
+                fillOpacity: 0.1,
+                radius: 15000 // 15km
+            }).addTo(markerGroup);
+
+            L.marker([lat, lng], {
+                icon: L.icon({
+                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41]
+                })
+            }).addTo(markerGroup).bindPopup("Search center point").openPopup();
+
+            try {
+                const res = await fetch(`/api/geolocate?latitude=${lat}&longitude=${lng}&radius=15&ki_exp=${kiExp}&rep_exp=${repExp}`);
+                const fsps = await res.json();
+                renderResults(fsps, false); // don't clear center circle/marker
+            } catch (err) {
+                console.error("Geolocation failed:", err);
+            }
+        });
+
+        // Render FSPs on list and map
+        function renderResults(fsps, clearMap = true) {
+            const list = document.getElementById('results-list');
+            list.innerHTML = '';
+            
+            if (clearMap) {
+                markerGroup.clearLayers();
+            }
+
+            if (fsps.length === 0) {
+                list.innerHTML = '<div style="color: var(--text-muted); font-size: 0.85rem; text-align: center; margin-top: 2rem;">No FSPs found matching criteria.</div>';
+                return;
+            }
+
+            let bounds = [];
+
+            fsps.forEach(f => {
+                // Determine marker color by compliance status
+                const isPass = f.compliance.status === 'PASS';
+                const markerUrl = isPass ? 
+                    'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png' :
+                    'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png';
+                
+                // Add Marker to Map if coordinates exist
+                if (f.coordinates && f.coordinates.latitude) {
+                    const lat = f.coordinates.latitude;
+                    const lng = f.coordinates.longitude;
+                    bounds.push([lat, lng]);
+
+                    const marker = L.marker([lat, lng], {
+                        icon: L.icon({
+                            iconUrl: markerUrl,
+                            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                            iconSize: [25, 41],
+                            iconAnchor: [12, 41],
+                            popupAnchor: [1, -34],
+                            shadowSize: [41, 41]
+                        })
+                    }).addTo(markerGroup);
+
+                    const badgeClass = isPass ? 'badge-success' : 'badge-danger';
+                    const badgeText = isPass ? 'Compliant' : 'Non-Compliant';
+                    
+                    let failList = '';
+                    if (!isPass && f.compliance.failures) {
+                        failList = '<div style="margin-top: 0.5rem; color: var(--danger); font-size: 0.75rem;">' + 
+                                   f.compliance.failures.map(x => '• ' + x).join('<br>') + 
+                                   '</div>';
+                    }
+
+                    marker.bindPopup(`
+                        <div class="popup-header">${f.name}</div>
+                        <div class="popup-body">
+                            <div><strong>FSP No:</strong> ${f.fsp_no}</div>
+                            <div><strong>Type:</strong> ${f.fsp_type || 'Unknown'}</div>
+                            <div><strong>Address:</strong> ${f.address_line_1 || ''}, ${f.address_line_2 || ''}</div>
+                            <div><strong>Postal Code:</strong> ${f.postal_code || ''}</div>
+                            <div style="margin-top: 0.4rem;">
+                                <span class="badge ${badgeClass}">${badgeText}</span>
+                            </div>
+                            ${failList}
+                        </div>
+                    `);
+                }
+
+                // Append to Sidebar List
+                const item = document.createElement('div');
+                item.className = 'result-item';
+                const distMeta = f.distance_km !== undefined ? `<span>${f.distance_km} km away</span>` : '';
+                const badgeText = f.compliance.status === 'PASS' ? 'PASS' : 'FAIL';
+                const badgeStyle = f.compliance.status === 'PASS' ? 'color: var(--success);' : 'color: var(--danger);';
+                
+                item.innerHTML = `
+                    <div class="result-title">${f.name}</div>
+                    <div class="result-meta">
+                        <span>FSP No: ${f.fsp_no}</span>
+                        ${distMeta}
+                        <span style="font-weight: 700; ${badgeStyle}">${badgeText}</span>
+                    </div>
+                `;
+
+                item.onclick = function() {
+                    if (f.coordinates && f.coordinates.latitude) {
+                        map.setView([f.coordinates.latitude, f.coordinates.longitude], 14);
+                    }
+                };
+
+                list.appendChild(item);
+            });
+
+            // Adjust map view bounds to encompass all matched markers
+            if (bounds.length > 0) {
+                map.fitBounds(bounds, { padding: [50, 50] });
+            }
+        }
+
+        // Bootstrap
+        loadStats();
+    </script>
+</body>
+</html>

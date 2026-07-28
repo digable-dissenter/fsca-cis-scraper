@@ -1,0 +1,891 @@
+[0m11:12:26.338523 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000234C1F2C590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000234BE7034D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000234C2DABD90>]}
+
+
+============================== 11:12:26.346420 | a1bb1e12-dc71-4491-837a-037a0f5d8c7e ==============================
+[0m11:12:26.346420 [info ] [MainThread]: Running with dbt=1.11.12
+[0m11:12:26.346969 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'dbt_fsca', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt debug --project-dir dbt_fsca --profiles-dir dbt_fsca', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'dbt_fsca\\logs'}
+[0m11:12:26.395769 [info ] [MainThread]: dbt version: 1.11.12
+[0m11:12:26.396425 [info ] [MainThread]: python version: 3.13.3
+[0m11:12:26.396908 [info ] [MainThread]: python path: C:\Users\this_\AppData\Local\Programs\Python\Python313\python.exe
+[0m11:12:26.397197 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m11:12:26.438548 [info ] [MainThread]: Using profiles dir at dbt_fsca
+[0m11:12:26.438965 [info ] [MainThread]: Using profiles.yml file at dbt_fsca\profiles.yml
+[0m11:12:26.439236 [info ] [MainThread]: Using dbt_project.yml file at dbt_fsca\dbt_project.yml
+[0m11:12:26.554631 [info ] [MainThread]: Configuration:
+[0m11:12:26.555160 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m11:12:26.555582 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:12:26.555942 [info ] [MainThread]: Required dependencies:
+[0m11:12:26.556343 [debug] [MainThread]: Executing "git --help"
+[0m11:12:26.675051 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:12:26.675530 [debug] [MainThread]: STDERR: "b''"
+[0m11:12:26.675823 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:12:26.676143 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m11:12:26.676422 [info ] [MainThread]: [31m1 check failed:[0m
+[0m11:12:26.676706 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "dbt_fsca_profile", target "dev" invalid: 'schema_directory' is a required property
+
+
+[0m11:12:26.678104 [debug] [MainThread]: Command `dbt debug` failed at 11:12:26.677865 after 0.57 seconds
+[0m11:12:26.678783 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000234C207D350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000234C3FA4B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000234C3E16140>]}
+[0m11:12:26.679454 [debug] [MainThread]: Flushing usage events
+[0m11:12:28.039304 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:12:52.826636 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D2C92EC590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D2C5AC34D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D2CA16BD90>]}
+
+
+============================== 11:12:52.832195 | 08cd6b88-efdf-44ed-9936-d5a247c7c6dd ==============================
+[0m11:12:52.832195 [info ] [MainThread]: Running with dbt=1.11.12
+[0m11:12:52.832714 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'dbt_fsca', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt debug --project-dir dbt_fsca --profiles-dir dbt_fsca', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'dbt_fsca\\logs'}
+[0m11:12:52.875435 [info ] [MainThread]: dbt version: 1.11.12
+[0m11:12:52.876347 [info ] [MainThread]: python version: 3.13.3
+[0m11:12:52.877094 [info ] [MainThread]: python path: C:\Users\this_\AppData\Local\Programs\Python\Python313\python.exe
+[0m11:12:52.877673 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m11:12:52.917114 [info ] [MainThread]: Using profiles dir at dbt_fsca
+[0m11:12:52.917613 [info ] [MainThread]: Using profiles.yml file at dbt_fsca\profiles.yml
+[0m11:12:52.918199 [info ] [MainThread]: Using dbt_project.yml file at dbt_fsca\dbt_project.yml
+[0m11:12:52.920859 [info ] [MainThread]: adapter type: sqlite
+[0m11:12:52.921295 [info ] [MainThread]: adapter version: 1.10.0
+[0m11:12:53.032379 [info ] [MainThread]: Configuration:
+[0m11:12:53.032861 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:12:53.033257 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:12:53.034036 [info ] [MainThread]: Required dependencies:
+[0m11:12:53.034619 [debug] [MainThread]: Executing "git --help"
+[0m11:12:53.178005 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:12:53.178605 [debug] [MainThread]: STDERR: "b''"
+[0m11:12:53.179307 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:12:53.180027 [info ] [MainThread]: Connection:
+[0m11:12:53.180518 [info ] [MainThread]:   database: database
+[0m11:12:53.180845 [info ] [MainThread]:   schema: main
+[0m11:12:53.181103 [info ] [MainThread]:   schemas_and_paths: {'main': 'c:\\Users\\this_\\Documents\\fsca-cis-scraper\\data\\fsca_cis.db'}
+[0m11:12:53.181368 [info ] [MainThread]:   schema_directory: c:\Users\this_\Documents\fsca-cis-scraper\data
+[0m11:12:53.181914 [info ] [MainThread]: Registered adapter: sqlite=1.10.0
+[0m11:12:53.766979 [debug] [MainThread]: Acquiring new sqlite connection 'debug'
+[0m11:12:58.855247 [debug] [MainThread]: Using sqlite connection "debug"
+[0m11:12:58.855829 [debug] [MainThread]: On debug: select 1 as id
+[0m11:12:58.856164 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:12:58.979578 [debug] [MainThread]: SQL status: OK in 0.123 seconds
+[0m11:12:58.980764 [debug] [MainThread]: On debug: Close
+[0m11:12:58.981180 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m11:12:58.981587 [info ] [MainThread]: [32mAll checks passed![0m
+[0m11:12:58.983297 [debug] [MainThread]: Command `dbt debug` succeeded at 11:12:58.983124 after 6.37 seconds
+[0m11:12:58.983612 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:12:58.983909 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D2CB6BCB00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D2CB34E570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D2CB1D5F20>]}
+[0m11:12:58.984324 [debug] [MainThread]: Flushing usage events
+[0m11:13:00.206080 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:13:18.542148 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000185D8A8C590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000185D52134D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000185DA96BD90>]}
+
+
+============================== 11:13:18.547821 | 53a4cca2-e90a-4c7b-8f85-7c535481624e ==============================
+[0m11:13:18.547821 [info ] [MainThread]: Running with dbt=1.11.12
+[0m11:13:18.548306 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'dbt_fsca', 'invocation_command': 'dbt run --project-dir dbt_fsca --profiles-dir dbt_fsca', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'dbt_fsca\\logs'}
+[0m11:13:18.908980 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '53a4cca2-e90a-4c7b-8f85-7c535481624e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000185D8BDFBB0>]}
+[0m11:13:18.972076 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '53a4cca2-e90a-4c7b-8f85-7c535481624e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000185DA9F8C00>]}
+[0m11:13:18.973769 [info ] [MainThread]: Registered adapter: sqlite=1.10.0
+[0m11:13:19.567070 [debug] [MainThread]: checksum: f368f5348cf42803b94ef7fb8257ecf3bf9a9a16dd9c8c51fe5172f2dbeb457f, vars: {}, profile: , target: , version: 1.11.12
+[0m11:13:19.568790 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m11:13:19.569335 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '53a4cca2-e90a-4c7b-8f85-7c535481624e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000185D991B050>]}
+[0m11:13:22.216294 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '53a4cca2-e90a-4c7b-8f85-7c535481624e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000185D969B020>]}
+[0m11:13:22.277087 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_fsca\target\manifest.json
+[0m11:13:22.284804 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_fsca\target\semantic_manifest.json
+[0m11:13:22.306147 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '53a4cca2-e90a-4c7b-8f85-7c535481624e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000185DAE5E0B0>]}
+[0m11:13:22.306609 [info ] [MainThread]: Found 2 models, 416 macros
+[0m11:13:22.306923 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '53a4cca2-e90a-4c7b-8f85-7c535481624e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000185DAD893D0>]}
+[0m11:13:22.310146 [info ] [MainThread]: 
+[0m11:13:22.310767 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:13:22.311186 [info ] [MainThread]: 
+[0m11:13:22.311779 [debug] [MainThread]: Acquiring new sqlite connection 'master'
+[0m11:13:22.317623 [debug] [ThreadPool]: Acquiring new sqlite connection 'list_database'
+[0m11:13:22.432659 [debug] [ThreadPool]: Using sqlite connection "list_database"
+[0m11:13:22.433024 [debug] [ThreadPool]: On list_database: BEGIN
+[0m11:13:22.433257 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:13:22.434191 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m11:13:22.434452 [debug] [ThreadPool]: Using sqlite connection "list_database"
+[0m11:13:22.434697 [debug] [ThreadPool]: On list_database: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "connection_name": "list_database"} */
+
+        pragma database_list
+    
+[0m11:13:22.435335 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m11:13:22.436739 [debug] [ThreadPool]: On list_database: ROLLBACK
+[0m11:13:22.437157 [debug] [ThreadPool]: On list_database: Close
+[0m11:13:22.438883 [debug] [ThreadPool]: Acquiring new sqlite connection 'list_database_main'
+[0m11:13:22.444919 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m11:13:22.445278 [debug] [ThreadPool]: On list_database_main: BEGIN
+[0m11:13:22.445497 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:13:22.446271 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m11:13:22.446513 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m11:13:22.446729 [debug] [ThreadPool]: On list_database_main: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "connection_name": "list_database_main"} */
+
+        pragma database_list
+    
+[0m11:13:22.446948 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m11:13:22.448160 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m11:13:22.448505 [debug] [ThreadPool]: On list_database_main: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "connection_name": "list_database_main"} */
+
+            SELECT
+                'database' as database
+                ,name
+                ,'main' AS schema
+                ,type as data_type
+            FROM
+                main.sqlite_master
+            WHERE
+                name NOT LIKE 'sqlite_%'
+        
+[0m11:13:22.449399 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m11:13:22.450504 [debug] [ThreadPool]: On list_database_main: ROLLBACK
+[0m11:13:22.450771 [debug] [ThreadPool]: On list_database_main: Close
+[0m11:13:22.454015 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '53a4cca2-e90a-4c7b-8f85-7c535481624e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000185DAE3B590>]}
+[0m11:13:22.454775 [debug] [MainThread]: Using sqlite connection "master"
+[0m11:13:22.455154 [debug] [MainThread]: On master: BEGIN
+[0m11:13:22.455436 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:13:22.456281 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m11:13:22.456552 [debug] [MainThread]: On master: COMMIT
+[0m11:13:22.456824 [debug] [MainThread]: Using sqlite connection "master"
+[0m11:13:22.457198 [debug] [MainThread]: On master: COMMIT
+[0m11:13:22.457600 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m11:13:22.457984 [debug] [MainThread]: On master: Close
+[0m11:13:22.496650 [debug] [Thread-1 (]: Began running node model.dbt_fsca.dim_fsps
+[0m11:13:22.497525 [info ] [Thread-1 (]: 1 of 2 START sql view model main.dim_fsps ...................................... [RUN]
+[0m11:13:22.498248 [debug] [Thread-1 (]: Acquiring new sqlite connection 'model.dbt_fsca.dim_fsps'
+[0m11:13:22.498624 [debug] [Thread-1 (]: Began compiling node model.dbt_fsca.dim_fsps
+[0m11:13:22.504633 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_fsca.dim_fsps"
+[0m11:13:22.507980 [debug] [Thread-1 (]: Began executing node model.dbt_fsca.dim_fsps
+[0m11:13:22.520972 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_fsca.dim_fsps"
+[0m11:13:22.523926 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.dim_fsps"
+[0m11:13:22.524347 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: BEGIN
+[0m11:13:22.524641 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m11:13:22.525481 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:13:22.525820 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.dim_fsps"
+[0m11:13:22.526102 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "node_id": "model.dbt_fsca.dim_fsps"} */
+
+    
+    create view main."dim_fsps" as
+    select
+    id as fsp_id,
+    fsp_no,
+    name,
+    trading_name,
+    fsp_type,
+    registration_number,
+    date_authorised,
+    status,
+    physical_address,
+    case 
+        when postal_code is not null and length(postal_code) > 0 
+        then substr('0000' || trim(postal_code), -4)
+        else null 
+    end as padded_postal_code,
+    telephone,
+    scraped_at
+from fsps;
+[0m11:13:22.529565 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m11:13:22.535475 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: COMMIT
+[0m11:13:22.535895 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.dim_fsps"
+[0m11:13:22.536157 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: COMMIT
+[0m11:13:22.538363 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m11:13:22.541681 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: Close
+[0m11:13:22.544687 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '53a4cca2-e90a-4c7b-8f85-7c535481624e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000185DAFCE990>]}
+[0m11:13:22.545832 [info ] [Thread-1 (]: 1 of 2 OK created sql view model main.dim_fsps ................................. [[32mOK[0m in 0.04s]
+[0m11:13:22.547106 [debug] [Thread-1 (]: Finished running node model.dbt_fsca.dim_fsps
+[0m11:13:22.547820 [debug] [Thread-1 (]: Began running node model.dbt_fsca.fct_compliance_verification
+[0m11:13:22.548484 [info ] [Thread-1 (]: 2 of 2 START sql view model main.fct_compliance_verification ................... [RUN]
+[0m11:13:22.549119 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_fsca.dim_fsps, now model.dbt_fsca.fct_compliance_verification)
+[0m11:13:22.549786 [debug] [Thread-1 (]: Began compiling node model.dbt_fsca.fct_compliance_verification
+[0m11:13:22.552522 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_fsca.fct_compliance_verification"
+[0m11:13:22.553838 [debug] [Thread-1 (]: Began executing node model.dbt_fsca.fct_compliance_verification
+[0m11:13:22.556359 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_fsca.fct_compliance_verification"
+[0m11:13:22.557874 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.fct_compliance_verification"
+[0m11:13:22.558502 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: BEGIN
+[0m11:13:22.558906 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:13:22.561796 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m11:13:22.562257 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.fct_compliance_verification"
+[0m11:13:22.562589 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "node_id": "model.dbt_fsca.fct_compliance_verification"} */
+
+    
+    create view main."fct_compliance_verification" as
+    with rep_products as (
+    select
+        rp.id as rep_product_id,
+        r.fsp_id,
+        r.full_names || ' ' || r.surname as rep_name,
+        rp.category,
+        rp.subcategory,
+        rp.product_name,
+        rp.advice,
+        rp.intermediary_scripted or rp.intermediary_other as intermediary,
+        rp.under_supervision,
+        rp.category_code,
+        rp.sub_category_code,
+        rp.combined_code
+    from fsp_representative_products rp
+    join fsp_representatives r on rp.representative_id = r.id
+)
+
+select
+    fsp_id,
+    rep_product_id,
+    rep_name,
+    category,
+    product_name,
+    advice,
+    intermediary,
+    under_supervision,
+    combined_code
+from rep_products;
+[0m11:13:22.564899 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m11:13:22.566918 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: COMMIT
+[0m11:13:22.567491 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.fct_compliance_verification"
+[0m11:13:22.567927 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: COMMIT
+[0m11:13:22.571108 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m11:13:22.572468 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: Close
+[0m11:13:22.573271 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '53a4cca2-e90a-4c7b-8f85-7c535481624e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000185DB38F390>]}
+[0m11:13:22.573893 [info ] [Thread-1 (]: 2 of 2 OK created sql view model main.fct_compliance_verification .............. [[32mOK[0m in 0.02s]
+[0m11:13:22.574631 [debug] [Thread-1 (]: Finished running node model.dbt_fsca.fct_compliance_verification
+[0m11:13:22.577111 [debug] [MainThread]: Using sqlite connection "master"
+[0m11:13:22.577582 [debug] [MainThread]: On master: BEGIN
+[0m11:13:22.577902 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:13:22.580899 [debug] [MainThread]: SQL status: OK in 0.003 seconds
+[0m11:13:22.581604 [debug] [MainThread]: On master: COMMIT
+[0m11:13:22.582027 [debug] [MainThread]: Using sqlite connection "master"
+[0m11:13:22.582405 [debug] [MainThread]: On master: COMMIT
+[0m11:13:22.582793 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m11:13:22.583134 [debug] [MainThread]: On master: Close
+[0m11:13:22.583587 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:13:22.583845 [debug] [MainThread]: Connection 'list_database' was properly closed.
+[0m11:13:22.584131 [debug] [MainThread]: Connection 'list_database_main' was properly closed.
+[0m11:13:22.584394 [debug] [MainThread]: Connection 'model.dbt_fsca.fct_compliance_verification' was properly closed.
+[0m11:13:22.584719 [info ] [MainThread]: 
+[0m11:13:22.585091 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 0.27 seconds (0.27s).
+[0m11:13:22.585891 [debug] [MainThread]: Command end result
+[0m11:13:22.612007 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_fsca\target\manifest.json
+[0m11:13:22.616105 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_fsca\target\semantic_manifest.json
+[0m11:13:22.624452 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_fsca\target\run_results.json
+[0m11:13:22.625191 [info ] [MainThread]: 
+[0m11:13:22.625959 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:13:22.626709 [info ] [MainThread]: 
+[0m11:13:22.627351 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m11:13:22.629163 [debug] [MainThread]: Command `dbt run` succeeded at 11:13:22.628989 after 4.24 seconds
+[0m11:13:22.629618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000185DA9465D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000185D9893BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000185DA986E40>]}
+[0m11:13:22.630316 [debug] [MainThread]: Flushing usage events
+[0m11:13:23.763850 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:34:59.434245 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270ACC2C590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270A94B34D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270AEB07D90>]}
+
+
+============================== 18:34:59.446753 | 3794e52b-09d8-49b9-9d9b-dd40847cc4e0 ==============================
+[0m18:34:59.446753 [info ] [MainThread]: Running with dbt=1.11.12
+[0m18:34:59.447215 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'dbt_fsca', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt run --project-dir dbt_fsca --profiles-dir dbt_fsca', 'use_experimental_parser': 'False', 'log_path': 'dbt_fsca\\logs'}
+[0m18:34:59.790611 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3794e52b-09d8-49b9-9d9b-dd40847cc4e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270ACD7FBB0>]}
+[0m18:34:59.848795 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3794e52b-09d8-49b9-9d9b-dd40847cc4e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270AEB94C00>]}
+[0m18:34:59.851105 [info ] [MainThread]: Registered adapter: sqlite=1.10.0
+[0m18:35:00.383195 [debug] [MainThread]: checksum: f368f5348cf42803b94ef7fb8257ecf3bf9a9a16dd9c8c51fe5172f2dbeb457f, vars: {}, profile: , target: , version: 1.11.12
+[0m18:35:02.240726 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m18:35:02.241396 [debug] [MainThread]: Partial parsing: updated file: dbt_fsca://models\dim_fsps.sql
+[0m18:35:02.454977 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3794e52b-09d8-49b9-9d9b-dd40847cc4e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270AEFC2150>]}
+[0m18:35:02.577218 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_fsca\target\manifest.json
+[0m18:35:02.580938 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_fsca\target\semantic_manifest.json
+[0m18:35:02.603955 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3794e52b-09d8-49b9-9d9b-dd40847cc4e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270AC91AE40>]}
+[0m18:35:02.604449 [info ] [MainThread]: Found 2 models, 416 macros
+[0m18:35:02.604762 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3794e52b-09d8-49b9-9d9b-dd40847cc4e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270AEC50130>]}
+[0m18:35:02.607566 [info ] [MainThread]: 
+[0m18:35:02.608077 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m18:35:02.608371 [info ] [MainThread]: 
+[0m18:35:02.608867 [debug] [MainThread]: Acquiring new sqlite connection 'master'
+[0m18:35:02.614814 [debug] [ThreadPool]: Acquiring new sqlite connection 'list_database'
+[0m18:35:07.408582 [debug] [ThreadPool]: Using sqlite connection "list_database"
+[0m18:35:07.408998 [debug] [ThreadPool]: On list_database: BEGIN
+[0m18:35:07.409274 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:35:07.410276 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m18:35:07.410572 [debug] [ThreadPool]: Using sqlite connection "list_database"
+[0m18:35:07.410789 [debug] [ThreadPool]: On list_database: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "connection_name": "list_database"} */
+
+        pragma database_list
+    
+[0m18:35:07.413019 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m18:35:07.414727 [debug] [ThreadPool]: On list_database: ROLLBACK
+[0m18:35:07.415298 [debug] [ThreadPool]: On list_database: Close
+[0m18:35:07.416511 [debug] [ThreadPool]: Acquiring new sqlite connection 'list_database_main'
+[0m18:35:07.422223 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m18:35:07.422545 [debug] [ThreadPool]: On list_database_main: BEGIN
+[0m18:35:07.422756 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:35:07.423502 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m18:35:07.423734 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m18:35:07.423979 [debug] [ThreadPool]: On list_database_main: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "connection_name": "list_database_main"} */
+
+        pragma database_list
+    
+[0m18:35:07.424197 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:35:07.425425 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m18:35:07.425751 [debug] [ThreadPool]: On list_database_main: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "connection_name": "list_database_main"} */
+
+            SELECT
+                'database' as database
+                ,name
+                ,'main' AS schema
+                ,type as data_type
+            FROM
+                main.sqlite_master
+            WHERE
+                name NOT LIKE 'sqlite_%'
+        
+[0m18:35:07.426918 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m18:35:07.428049 [debug] [ThreadPool]: On list_database_main: ROLLBACK
+[0m18:35:07.428329 [debug] [ThreadPool]: On list_database_main: Close
+[0m18:35:07.431150 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3794e52b-09d8-49b9-9d9b-dd40847cc4e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270AF4F8D50>]}
+[0m18:35:07.431959 [debug] [MainThread]: Using sqlite connection "master"
+[0m18:35:07.432367 [debug] [MainThread]: On master: BEGIN
+[0m18:35:07.432648 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:35:07.433621 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m18:35:07.433919 [debug] [MainThread]: On master: COMMIT
+[0m18:35:07.434166 [debug] [MainThread]: Using sqlite connection "master"
+[0m18:35:07.434416 [debug] [MainThread]: On master: COMMIT
+[0m18:35:07.434651 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:35:07.434956 [debug] [MainThread]: On master: Close
+[0m18:35:07.441399 [debug] [Thread-1 (]: Began running node model.dbt_fsca.dim_fsps
+[0m18:35:07.441911 [info ] [Thread-1 (]: 1 of 2 START sql view model main.dim_fsps ...................................... [RUN]
+[0m18:35:07.442427 [debug] [Thread-1 (]: Acquiring new sqlite connection 'model.dbt_fsca.dim_fsps'
+[0m18:35:07.442827 [debug] [Thread-1 (]: Began compiling node model.dbt_fsca.dim_fsps
+[0m18:35:07.448931 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_fsca.dim_fsps"
+[0m18:35:07.451171 [debug] [Thread-1 (]: Began executing node model.dbt_fsca.dim_fsps
+[0m18:35:07.464503 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_fsca.dim_fsps"
+[0m18:35:07.466405 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.dim_fsps"
+[0m18:35:07.466770 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: BEGIN
+[0m18:35:07.467052 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m18:35:07.468124 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m18:35:07.468603 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.dim_fsps"
+[0m18:35:07.468937 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "node_id": "model.dbt_fsca.dim_fsps"} */
+
+    
+    create view main."dim_fsps" as
+    select
+    id as fsp_id,
+    fsp_no,
+    name,
+    trading_name,
+    fsp_type,
+    registration_number,
+    date_authorised,
+    status,
+    physical_address,
+    address_line_1,
+    address_line_2,
+    address_line_3,
+    address_line_4,
+    case 
+        when postal_code is not null and length(postal_code) > 0 
+        then substr('0000' || trim(postal_code), -4)
+        else null 
+    end as padded_postal_code,
+    telephone,
+    scraped_at
+from fsps;
+[0m18:35:07.472059 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m18:35:07.476778 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: COMMIT
+[0m18:35:07.477162 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.dim_fsps"
+[0m18:35:07.477414 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: COMMIT
+[0m18:35:07.479508 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m18:35:07.482850 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: Close
+[0m18:35:07.485712 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3794e52b-09d8-49b9-9d9b-dd40847cc4e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270AF459190>]}
+[0m18:35:07.486671 [info ] [Thread-1 (]: 1 of 2 OK created sql view model main.dim_fsps ................................. [[32mOK[0m in 0.04s]
+[0m18:35:07.487585 [debug] [Thread-1 (]: Finished running node model.dbt_fsca.dim_fsps
+[0m18:35:07.488152 [debug] [Thread-1 (]: Began running node model.dbt_fsca.fct_compliance_verification
+[0m18:35:07.488759 [info ] [Thread-1 (]: 2 of 2 START sql view model main.fct_compliance_verification ................... [RUN]
+[0m18:35:07.489299 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_fsca.dim_fsps, now model.dbt_fsca.fct_compliance_verification)
+[0m18:35:07.489673 [debug] [Thread-1 (]: Began compiling node model.dbt_fsca.fct_compliance_verification
+[0m18:35:07.491526 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_fsca.fct_compliance_verification"
+[0m18:35:07.493197 [debug] [Thread-1 (]: Began executing node model.dbt_fsca.fct_compliance_verification
+[0m18:35:07.495428 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_fsca.fct_compliance_verification"
+[0m18:35:07.496617 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.fct_compliance_verification"
+[0m18:35:07.496970 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: BEGIN
+[0m18:35:07.497244 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:35:07.500145 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m18:35:07.500551 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.fct_compliance_verification"
+[0m18:35:07.500837 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "node_id": "model.dbt_fsca.fct_compliance_verification"} */
+
+    
+    create view main."fct_compliance_verification" as
+    with rep_products as (
+    select
+        rp.id as rep_product_id,
+        r.fsp_id,
+        r.full_names || ' ' || r.surname as rep_name,
+        rp.category,
+        rp.subcategory,
+        rp.product_name,
+        rp.advice,
+        rp.intermediary_scripted or rp.intermediary_other as intermediary,
+        rp.under_supervision,
+        rp.category_code,
+        rp.sub_category_code,
+        rp.combined_code
+    from fsp_representative_products rp
+    join fsp_representatives r on rp.representative_id = r.id
+)
+
+select
+    fsp_id,
+    rep_product_id,
+    rep_name,
+    category,
+    product_name,
+    advice,
+    intermediary,
+    under_supervision,
+    combined_code
+from rep_products;
+[0m18:35:07.502594 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m18:35:07.504047 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: COMMIT
+[0m18:35:07.504573 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.fct_compliance_verification"
+[0m18:35:07.504974 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: COMMIT
+[0m18:35:07.507080 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m18:35:07.507902 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: Close
+[0m18:35:07.508614 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3794e52b-09d8-49b9-9d9b-dd40847cc4e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270AF4D8730>]}
+[0m18:35:07.509199 [info ] [Thread-1 (]: 2 of 2 OK created sql view model main.fct_compliance_verification .............. [[32mOK[0m in 0.02s]
+[0m18:35:07.509918 [debug] [Thread-1 (]: Finished running node model.dbt_fsca.fct_compliance_verification
+[0m18:35:07.511570 [debug] [MainThread]: Using sqlite connection "master"
+[0m18:35:07.511907 [debug] [MainThread]: On master: BEGIN
+[0m18:35:07.512136 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:35:07.514323 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m18:35:07.514640 [debug] [MainThread]: On master: COMMIT
+[0m18:35:07.514908 [debug] [MainThread]: Using sqlite connection "master"
+[0m18:35:07.515162 [debug] [MainThread]: On master: COMMIT
+[0m18:35:07.515423 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:35:07.515839 [debug] [MainThread]: On master: Close
+[0m18:35:07.516408 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:35:07.516853 [debug] [MainThread]: Connection 'list_database' was properly closed.
+[0m18:35:07.517462 [debug] [MainThread]: Connection 'list_database_main' was properly closed.
+[0m18:35:07.517804 [debug] [MainThread]: Connection 'model.dbt_fsca.fct_compliance_verification' was properly closed.
+[0m18:35:07.518226 [info ] [MainThread]: 
+[0m18:35:07.518742 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 4.91 seconds (4.91s).
+[0m18:35:07.520083 [debug] [MainThread]: Command end result
+[0m18:35:07.543146 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_fsca\target\manifest.json
+[0m18:35:07.545903 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_fsca\target\semantic_manifest.json
+[0m18:35:07.553299 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_fsca\target\run_results.json
+[0m18:35:07.553798 [info ] [MainThread]: 
+[0m18:35:07.554250 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:35:07.554581 [info ] [MainThread]: 
+[0m18:35:07.554879 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m18:35:07.556146 [debug] [MainThread]: Command `dbt run` succeeded at 18:35:07.555943 after 8.33 seconds
+[0m18:35:07.556618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270AD4039D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270AF28F5C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270AF2CBF50>]}
+[0m18:35:07.556967 [debug] [MainThread]: Flushing usage events
+[0m18:35:08.765745 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:02:01.814569 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000285C325C590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000285BFA334D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000285C5137D90>]}
+
+
+============================== 19:02:01.823550 | 756c9b13-9808-4c40-abbb-cf87c1cb7fbb ==============================
+[0m19:02:01.823550 [info ] [MainThread]: Running with dbt=1.11.12
+[0m19:02:01.824603 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'dbt_fsca', 'use_colors': 'True', 'invocation_command': 'dbt run --project-dir dbt_fsca --profiles-dir dbt_fsca', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'dbt_fsca\\logs'}
+[0m19:02:02.161975 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '756c9b13-9808-4c40-abbb-cf87c1cb7fbb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000285C33AFBB0>]}
+[0m19:02:02.234160 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '756c9b13-9808-4c40-abbb-cf87c1cb7fbb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000285C51C8C00>]}
+[0m19:02:02.236424 [info ] [MainThread]: Registered adapter: sqlite=1.10.0
+[0m19:02:02.654481 [debug] [MainThread]: checksum: f368f5348cf42803b94ef7fb8257ecf3bf9a9a16dd9c8c51fe5172f2dbeb457f, vars: {}, profile: , target: , version: 1.11.12
+[0m19:02:02.864339 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:02:02.864724 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m19:02:02.864953 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:02:02.892285 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '756c9b13-9808-4c40-abbb-cf87c1cb7fbb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000285C40EB450>]}
+[0m19:02:02.973409 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_fsca\target\manifest.json
+[0m19:02:02.977171 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_fsca\target\semantic_manifest.json
+[0m19:02:03.007136 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '756c9b13-9808-4c40-abbb-cf87c1cb7fbb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000285C40F3B60>]}
+[0m19:02:03.008224 [info ] [MainThread]: Found 2 models, 416 macros
+[0m19:02:03.008911 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '756c9b13-9808-4c40-abbb-cf87c1cb7fbb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000285C56D35B0>]}
+[0m19:02:03.011480 [info ] [MainThread]: 
+[0m19:02:03.012039 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m19:02:03.012689 [info ] [MainThread]: 
+[0m19:02:03.013855 [debug] [MainThread]: Acquiring new sqlite connection 'master'
+[0m19:02:03.021859 [debug] [ThreadPool]: Acquiring new sqlite connection 'list_database'
+[0m19:02:03.315797 [debug] [ThreadPool]: Using sqlite connection "list_database"
+[0m19:02:03.316536 [debug] [ThreadPool]: On list_database: BEGIN
+[0m19:02:03.317116 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:02:03.318413 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m19:02:03.318795 [debug] [ThreadPool]: Using sqlite connection "list_database"
+[0m19:02:03.319074 [debug] [ThreadPool]: On list_database: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "connection_name": "list_database"} */
+
+        pragma database_list
+    
+[0m19:02:03.325466 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m19:02:03.326918 [debug] [ThreadPool]: On list_database: ROLLBACK
+[0m19:02:03.327473 [debug] [ThreadPool]: On list_database: Close
+[0m19:02:03.329597 [debug] [ThreadPool]: Acquiring new sqlite connection 'list_database_main'
+[0m19:02:03.337046 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m19:02:03.337541 [debug] [ThreadPool]: On list_database_main: BEGIN
+[0m19:02:03.337839 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:02:03.338738 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m19:02:03.339064 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m19:02:03.339320 [debug] [ThreadPool]: On list_database_main: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "connection_name": "list_database_main"} */
+
+        pragma database_list
+    
+[0m19:02:03.339591 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:02:03.341607 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m19:02:03.342050 [debug] [ThreadPool]: On list_database_main: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "connection_name": "list_database_main"} */
+
+            SELECT
+                'database' as database
+                ,name
+                ,'main' AS schema
+                ,type as data_type
+            FROM
+                main.sqlite_master
+            WHERE
+                name NOT LIKE 'sqlite_%'
+        
+[0m19:02:03.343384 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m19:02:03.344999 [debug] [ThreadPool]: On list_database_main: ROLLBACK
+[0m19:02:03.345341 [debug] [ThreadPool]: On list_database_main: Close
+[0m19:02:03.349471 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '756c9b13-9808-4c40-abbb-cf87c1cb7fbb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000285C58D5570>]}
+[0m19:02:03.350082 [debug] [MainThread]: Using sqlite connection "master"
+[0m19:02:03.350414 [debug] [MainThread]: On master: BEGIN
+[0m19:02:03.350691 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:02:03.351463 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m19:02:03.351756 [debug] [MainThread]: On master: COMMIT
+[0m19:02:03.352068 [debug] [MainThread]: Using sqlite connection "master"
+[0m19:02:03.352519 [debug] [MainThread]: On master: COMMIT
+[0m19:02:03.352867 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:02:03.353211 [debug] [MainThread]: On master: Close
+[0m19:02:03.359607 [debug] [Thread-1 (]: Began running node model.dbt_fsca.dim_fsps
+[0m19:02:03.360221 [info ] [Thread-1 (]: 1 of 2 START sql view model main.dim_fsps ...................................... [RUN]
+[0m19:02:03.361014 [debug] [Thread-1 (]: Acquiring new sqlite connection 'model.dbt_fsca.dim_fsps'
+[0m19:02:03.361495 [debug] [Thread-1 (]: Began compiling node model.dbt_fsca.dim_fsps
+[0m19:02:03.452161 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_fsca.dim_fsps"
+[0m19:02:03.454102 [debug] [Thread-1 (]: Began executing node model.dbt_fsca.dim_fsps
+[0m19:02:03.470746 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.dim_fsps"
+[0m19:02:03.471245 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "node_id": "model.dbt_fsca.dim_fsps"} */
+drop view if exists "main"."dim_fsps"
+[0m19:02:03.471578 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m19:02:03.477013 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m19:02:03.482489 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_fsca.dim_fsps"
+[0m19:02:03.485158 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.dim_fsps"
+[0m19:02:03.485886 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: BEGIN
+[0m19:02:03.486725 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:02:03.487126 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.dim_fsps"
+[0m19:02:03.487539 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "node_id": "model.dbt_fsca.dim_fsps"} */
+
+    
+    create view main."dim_fsps" as
+    select
+    id as fsp_id,
+    fsp_no,
+    name,
+    trading_name,
+    fsp_type,
+    registration_number,
+    date_authorised,
+    status,
+    physical_address,
+    address_line_1,
+    address_line_2,
+    address_line_3,
+    address_line_4,
+    case 
+        when postal_code is not null and length(postal_code) > 0 
+        then substr('0000' || trim(postal_code), -4)
+        else null 
+    end as padded_postal_code,
+    telephone,
+    scraped_at
+from fsps;
+[0m19:02:03.489911 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:02:03.495547 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: COMMIT
+[0m19:02:03.496015 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.dim_fsps"
+[0m19:02:03.496335 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: COMMIT
+[0m19:02:03.498084 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:02:03.501318 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: Close
+[0m19:02:03.504275 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '756c9b13-9808-4c40-abbb-cf87c1cb7fbb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000285C5A08950>]}
+[0m19:02:03.505351 [info ] [Thread-1 (]: 1 of 2 OK created sql view model main.dim_fsps ................................. [[32mOK[0m in 0.14s]
+[0m19:02:03.506133 [debug] [Thread-1 (]: Finished running node model.dbt_fsca.dim_fsps
+[0m19:02:03.506560 [debug] [Thread-1 (]: Began running node model.dbt_fsca.fct_compliance_verification
+[0m19:02:03.507234 [info ] [Thread-1 (]: 2 of 2 START sql view model main.fct_compliance_verification ................... [RUN]
+[0m19:02:03.507768 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_fsca.dim_fsps, now model.dbt_fsca.fct_compliance_verification)
+[0m19:02:03.508214 [debug] [Thread-1 (]: Began compiling node model.dbt_fsca.fct_compliance_verification
+[0m19:02:03.510084 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_fsca.fct_compliance_verification"
+[0m19:02:03.512719 [debug] [Thread-1 (]: Began executing node model.dbt_fsca.fct_compliance_verification
+[0m19:02:03.517365 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.fct_compliance_verification"
+[0m19:02:03.517903 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "node_id": "model.dbt_fsca.fct_compliance_verification"} */
+drop view if exists "main"."fct_compliance_verification"
+[0m19:02:03.518276 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:02:03.524452 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m19:02:03.525930 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_fsca.fct_compliance_verification"
+[0m19:02:03.527738 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.fct_compliance_verification"
+[0m19:02:03.528465 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: BEGIN
+[0m19:02:03.529011 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:02:03.529480 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.fct_compliance_verification"
+[0m19:02:03.530054 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "node_id": "model.dbt_fsca.fct_compliance_verification"} */
+
+    
+    create view main."fct_compliance_verification" as
+    with rep_products as (
+    select
+        rp.id as rep_product_id,
+        r.fsp_id,
+        r.full_names || ' ' || r.surname as rep_name,
+        rp.category,
+        rp.subcategory,
+        rp.product_name,
+        rp.advice,
+        rp.intermediary_scripted or rp.intermediary_other as intermediary,
+        rp.under_supervision,
+        rp.category_code,
+        rp.sub_category_code,
+        rp.combined_code
+    from fsp_representative_products rp
+    join fsp_representatives r on rp.representative_id = r.id
+)
+
+select
+    fsp_id,
+    rep_product_id,
+    rep_name,
+    category,
+    product_name,
+    advice,
+    intermediary,
+    under_supervision,
+    combined_code
+from rep_products;
+[0m19:02:03.532227 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:02:03.533684 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: COMMIT
+[0m19:02:03.534477 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.fct_compliance_verification"
+[0m19:02:03.535158 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: COMMIT
+[0m19:02:03.537453 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:02:03.538356 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: Close
+[0m19:02:03.539020 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '756c9b13-9808-4c40-abbb-cf87c1cb7fbb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000285C570B800>]}
+[0m19:02:03.539643 [info ] [Thread-1 (]: 2 of 2 OK created sql view model main.fct_compliance_verification .............. [[32mOK[0m in 0.03s]
+[0m19:02:03.540392 [debug] [Thread-1 (]: Finished running node model.dbt_fsca.fct_compliance_verification
+[0m19:02:03.542721 [debug] [MainThread]: Using sqlite connection "master"
+[0m19:02:03.543505 [debug] [MainThread]: On master: BEGIN
+[0m19:02:03.544134 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:02:03.546849 [debug] [MainThread]: SQL status: OK in 0.003 seconds
+[0m19:02:03.547372 [debug] [MainThread]: On master: COMMIT
+[0m19:02:03.547735 [debug] [MainThread]: Using sqlite connection "master"
+[0m19:02:03.548153 [debug] [MainThread]: On master: COMMIT
+[0m19:02:03.548625 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:02:03.548944 [debug] [MainThread]: On master: Close
+[0m19:02:03.549404 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:02:03.549696 [debug] [MainThread]: Connection 'list_database' was properly closed.
+[0m19:02:03.549916 [debug] [MainThread]: Connection 'list_database_main' was properly closed.
+[0m19:02:03.550180 [debug] [MainThread]: Connection 'model.dbt_fsca.fct_compliance_verification' was properly closed.
+[0m19:02:03.550750 [info ] [MainThread]: 
+[0m19:02:03.551289 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 0.54 seconds (0.54s).
+[0m19:02:03.552677 [debug] [MainThread]: Command end result
+[0m19:02:03.576171 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_fsca\target\manifest.json
+[0m19:02:03.579764 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_fsca\target\semantic_manifest.json
+[0m19:02:03.586014 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_fsca\target\run_results.json
+[0m19:02:03.586388 [info ] [MainThread]: 
+[0m19:02:03.586760 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:02:03.587071 [info ] [MainThread]: 
+[0m19:02:03.587410 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m19:02:03.589336 [debug] [MainThread]: Command `dbt run` succeeded at 19:02:03.589031 after 1.98 seconds
+[0m19:02:03.590101 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000285C5253890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000285C5567890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000285C0DFD7D0>]}
+[0m19:02:03.590630 [debug] [MainThread]: Flushing usage events
+[0m19:02:04.877991 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m07:27:14.723847 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021962D7C590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002195F4F34D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021964C5BD90>]}
+
+
+============================== 07:27:14.733607 | a46d3e46-9e69-468a-affd-fafbdeecca95 ==============================
+[0m07:27:14.733607 [info ] [MainThread]: Running with dbt=1.11.12
+[0m07:27:14.735201 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'dbt_fsca', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt run --project-dir dbt_fsca --profiles-dir dbt_fsca', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'dbt_fsca\\logs'}
+[0m07:27:15.336063 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a46d3e46-9e69-468a-affd-fafbdeecca95', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021962ECFBB0>]}
+[0m07:27:15.465092 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a46d3e46-9e69-468a-affd-fafbdeecca95', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021964CE4C00>]}
+[0m07:27:15.467934 [info ] [MainThread]: Registered adapter: sqlite=1.10.0
+[0m07:27:16.459966 [debug] [MainThread]: checksum: f368f5348cf42803b94ef7fb8257ecf3bf9a9a16dd9c8c51fe5172f2dbeb457f, vars: {}, profile: , target: , version: 1.11.12
+[0m07:27:19.330588 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m07:27:19.330995 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m07:27:19.331246 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m07:27:19.386369 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a46d3e46-9e69-468a-affd-fafbdeecca95', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021963C0B450>]}
+[0m07:27:19.510004 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_fsca\target\manifest.json
+[0m07:27:19.557487 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_fsca\target\semantic_manifest.json
+[0m07:27:19.619103 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a46d3e46-9e69-468a-affd-fafbdeecca95', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021963C13B60>]}
+[0m07:27:19.619774 [info ] [MainThread]: Found 2 models, 416 macros
+[0m07:27:19.620282 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a46d3e46-9e69-468a-affd-fafbdeecca95', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000219651F35B0>]}
+[0m07:27:19.623745 [info ] [MainThread]: 
+[0m07:27:19.624417 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m07:27:19.625138 [info ] [MainThread]: 
+[0m07:27:19.626379 [debug] [MainThread]: Acquiring new sqlite connection 'master'
+[0m07:27:19.637579 [debug] [ThreadPool]: Acquiring new sqlite connection 'list_database'
+[0m07:27:24.745405 [debug] [ThreadPool]: Using sqlite connection "list_database"
+[0m07:27:24.746372 [debug] [ThreadPool]: On list_database: BEGIN
+[0m07:27:24.747061 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:27:24.764088 [debug] [ThreadPool]: SQL status: OK in 0.017 seconds
+[0m07:27:24.764650 [debug] [ThreadPool]: Using sqlite connection "list_database"
+[0m07:27:24.765054 [debug] [ThreadPool]: On list_database: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "connection_name": "list_database"} */
+
+        pragma database_list
+    
+[0m07:27:24.765821 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m07:27:24.767516 [debug] [ThreadPool]: On list_database: ROLLBACK
+[0m07:27:24.768074 [debug] [ThreadPool]: On list_database: Close
+[0m07:27:24.770955 [debug] [ThreadPool]: Acquiring new sqlite connection 'list_database_main'
+[0m07:27:24.783753 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m07:27:24.784167 [debug] [ThreadPool]: On list_database_main: BEGIN
+[0m07:27:24.784572 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:27:24.785513 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m07:27:24.785887 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m07:27:24.786563 [debug] [ThreadPool]: On list_database_main: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "connection_name": "list_database_main"} */
+
+        pragma database_list
+    
+[0m07:27:24.787154 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m07:27:24.789614 [debug] [ThreadPool]: Using sqlite connection "list_database_main"
+[0m07:27:24.790174 [debug] [ThreadPool]: On list_database_main: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "connection_name": "list_database_main"} */
+
+            SELECT
+                'database' as database
+                ,name
+                ,'main' AS schema
+                ,type as data_type
+            FROM
+                main.sqlite_master
+            WHERE
+                name NOT LIKE 'sqlite_%'
+        
+[0m07:27:24.793661 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m07:27:24.796571 [debug] [ThreadPool]: On list_database_main: ROLLBACK
+[0m07:27:24.797261 [debug] [ThreadPool]: On list_database_main: Close
+[0m07:27:24.802500 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a46d3e46-9e69-468a-affd-fafbdeecca95', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000219653F5570>]}
+[0m07:27:24.803514 [debug] [MainThread]: Using sqlite connection "master"
+[0m07:27:24.804212 [debug] [MainThread]: On master: BEGIN
+[0m07:27:24.804949 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m07:27:24.806112 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m07:27:24.806629 [debug] [MainThread]: On master: COMMIT
+[0m07:27:24.807342 [debug] [MainThread]: Using sqlite connection "master"
+[0m07:27:24.808003 [debug] [MainThread]: On master: COMMIT
+[0m07:27:24.808726 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m07:27:24.809379 [debug] [MainThread]: On master: Close
+[0m07:27:24.820416 [debug] [Thread-1 (]: Began running node model.dbt_fsca.dim_fsps
+[0m07:27:24.821313 [info ] [Thread-1 (]: 1 of 2 START sql view model main.dim_fsps ...................................... [RUN]
+[0m07:27:24.822201 [debug] [Thread-1 (]: Acquiring new sqlite connection 'model.dbt_fsca.dim_fsps'
+[0m07:27:24.823024 [debug] [Thread-1 (]: Began compiling node model.dbt_fsca.dim_fsps
+[0m07:27:24.928993 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_fsca.dim_fsps"
+[0m07:27:24.931586 [debug] [Thread-1 (]: Began executing node model.dbt_fsca.dim_fsps
+[0m07:27:24.965229 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.dim_fsps"
+[0m07:27:24.966430 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "node_id": "model.dbt_fsca.dim_fsps"} */
+drop view if exists "main"."dim_fsps"
+[0m07:27:24.967506 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m07:27:24.975407 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m07:27:24.984083 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_fsca.dim_fsps"
+[0m07:27:24.987138 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.dim_fsps"
+[0m07:27:24.988096 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: BEGIN
+[0m07:27:24.988800 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m07:27:24.989277 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.dim_fsps"
+[0m07:27:24.989815 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "node_id": "model.dbt_fsca.dim_fsps"} */
+
+    
+    create view main."dim_fsps" as
+    select
+    id as fsp_id,
+    fsp_no,
+    name,
+    trading_name,
+    fsp_type,
+    registration_number,
+    date_authorised,
+    status,
+    physical_address,
+    address_line_1,
+    address_line_2,
+    address_line_3,
+    address_line_4,
+    case 
+        when postal_code is not null and length(postal_code) > 0 
+        then substr('0000' || trim(postal_code), -4)
+        else null 
+    end as padded_postal_code,
+    telephone,
+    scraped_at
+from fsps;
+[0m07:27:24.993861 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m07:27:25.005973 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: COMMIT
+[0m07:27:25.006829 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.dim_fsps"
+[0m07:27:25.007533 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: COMMIT
+[0m07:27:25.013528 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m07:27:25.019922 [debug] [Thread-1 (]: On model.dbt_fsca.dim_fsps: Close
+[0m07:27:25.025663 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a46d3e46-9e69-468a-affd-fafbdeecca95', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021965528950>]}
+[0m07:27:25.027370 [info ] [Thread-1 (]: 1 of 2 OK created sql view model main.dim_fsps ................................. [[32mOK[0m in 0.20s]
+[0m07:27:25.029069 [debug] [Thread-1 (]: Finished running node model.dbt_fsca.dim_fsps
+[0m07:27:25.030142 [debug] [Thread-1 (]: Began running node model.dbt_fsca.fct_compliance_verification
+[0m07:27:25.031458 [info ] [Thread-1 (]: 2 of 2 START sql view model main.fct_compliance_verification ................... [RUN]
+[0m07:27:25.032771 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_fsca.dim_fsps, now model.dbt_fsca.fct_compliance_verification)
+[0m07:27:25.033712 [debug] [Thread-1 (]: Began compiling node model.dbt_fsca.fct_compliance_verification
+[0m07:27:25.036990 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_fsca.fct_compliance_verification"
+[0m07:27:25.039901 [debug] [Thread-1 (]: Began executing node model.dbt_fsca.fct_compliance_verification
+[0m07:27:25.048388 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.fct_compliance_verification"
+[0m07:27:25.049363 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "node_id": "model.dbt_fsca.fct_compliance_verification"} */
+drop view if exists "main"."fct_compliance_verification"
+[0m07:27:25.049994 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:27:25.058726 [debug] [Thread-1 (]: SQL status: OK in 0.009 seconds
+[0m07:27:25.061565 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_fsca.fct_compliance_verification"
+[0m07:27:25.064302 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.fct_compliance_verification"
+[0m07:27:25.065292 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: BEGIN
+[0m07:27:25.066481 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m07:27:25.067356 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.fct_compliance_verification"
+[0m07:27:25.068263 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: /* {"app": "dbt", "dbt_version": "1.11.12", "profile_name": "dbt_fsca_profile", "target_name": "dev", "node_id": "model.dbt_fsca.fct_compliance_verification"} */
+
+    
+    create view main."fct_compliance_verification" as
+    with rep_products as (
+    select
+        rp.id as rep_product_id,
+        r.fsp_id,
+        r.full_names || ' ' || r.surname as rep_name,
+        rp.category,
+        rp.subcategory,
+        rp.product_name,
+        rp.advice,
+        rp.intermediary_scripted or rp.intermediary_other as intermediary,
+        rp.under_supervision,
+        rp.category_code,
+        rp.sub_category_code,
+        rp.combined_code
+    from fsp_representative_products rp
+    join fsp_representatives r on rp.representative_id = r.id
+)
+
+select
+    fsp_id,
+    rep_product_id,
+    rep_name,
+    category,
+    product_name,
+    advice,
+    intermediary,
+    under_supervision,
+    combined_code
+from rep_products;
+[0m07:27:25.072266 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m07:27:25.074558 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: COMMIT
+[0m07:27:25.075296 [debug] [Thread-1 (]: Using sqlite connection "model.dbt_fsca.fct_compliance_verification"
+[0m07:27:25.076036 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: COMMIT
+[0m07:27:25.080156 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m07:27:25.081661 [debug] [Thread-1 (]: On model.dbt_fsca.fct_compliance_verification: Close
+[0m07:27:25.082561 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a46d3e46-9e69-468a-affd-fafbdeecca95', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002196522B800>]}
+[0m07:27:25.083248 [info ] [Thread-1 (]: 2 of 2 OK created sql view model main.fct_compliance_verification .............. [[32mOK[0m in 0.05s]
+[0m07:27:25.084760 [debug] [Thread-1 (]: Finished running node model.dbt_fsca.fct_compliance_verification
+[0m07:27:25.087294 [debug] [MainThread]: Using sqlite connection "master"
+[0m07:27:25.088113 [debug] [MainThread]: On master: BEGIN
+[0m07:27:25.088868 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m07:27:25.091719 [debug] [MainThread]: SQL status: OK in 0.003 seconds
+[0m07:27:25.092392 [debug] [MainThread]: On master: COMMIT
+[0m07:27:25.093083 [debug] [MainThread]: Using sqlite connection "master"
+[0m07:27:25.093764 [debug] [MainThread]: On master: COMMIT
+[0m07:27:25.094480 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m07:27:25.095183 [debug] [MainThread]: On master: Close
+[0m07:27:25.096340 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m07:27:25.097159 [debug] [MainThread]: Connection 'list_database' was properly closed.
+[0m07:27:25.097868 [debug] [MainThread]: Connection 'list_database_main' was properly closed.
+[0m07:27:25.098445 [debug] [MainThread]: Connection 'model.dbt_fsca.fct_compliance_verification' was properly closed.
+[0m07:27:25.099145 [info ] [MainThread]: 
+[0m07:27:25.099957 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 5.47 seconds (5.47s).
+[0m07:27:25.102116 [debug] [MainThread]: Command end result
+[0m07:27:25.156206 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_fsca\target\manifest.json
+[0m07:27:25.161948 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_fsca\target\semantic_manifest.json
+[0m07:27:25.178243 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_fsca\target\run_results.json
+[0m07:27:25.178837 [info ] [MainThread]: 
+[0m07:27:25.179580 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m07:27:25.180070 [info ] [MainThread]: 
+[0m07:27:25.180512 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m07:27:25.182480 [debug] [MainThread]: Command `dbt run` succeeded at 07:27:25.182259 after 10.78 seconds
+[0m07:27:25.183052 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021964D73890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021965087890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002196090D7D0>]}
+[0m07:27:25.184024 [debug] [MainThread]: Flushing usage events
+[0m07:27:26.488558 [debug] [MainThread]: An error was encountered while trying to flush usage events

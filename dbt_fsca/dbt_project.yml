@@ -1,0 +1,17 @@
+name: 'dbt_fsca'
+version: '1.0.0'
+config-version: 2
+profile: 'dbt_fsca_profile'
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+models:
+  dbt_fsca:
+    materialized: view

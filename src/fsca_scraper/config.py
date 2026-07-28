@@ -7,6 +7,14 @@ SEARCH_PARAMS = {
 }
 SEARCH_URL = f"{BASE_URL}?APPNAME=Web&PRGNAME=Search_Mancos"
 
+CATEGORY_MAPPINGS = {
+    'CATEGORY I': 1,
+    'CATEGORY II - Discretionary FSP': 2,
+    'CATEGORY III - Administrative FSP': 3,
+    'CATEGORY IV Assistance business FSP': 4,
+    'CATEGORY 2A': 20
+}
+
 REQUEST_DELAY_MIN_SECONDS = 3
 REQUEST_DELAY_MAX_SECONDS = 5
 

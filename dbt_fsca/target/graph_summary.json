@@ -1,0 +1,1 @@
+{"_invocation_id": "a46d3e46-9e69-468a-affd-fafbdeecca95", "linked": {"0": {"name": "model.dbt_fsca.fct_compliance_verification", "type": "model"}, "1": {"name": "model.dbt_fsca.dim_fsps", "type": "model"}}}
