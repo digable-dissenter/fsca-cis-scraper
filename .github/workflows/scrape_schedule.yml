@@ -2,8 +2,11 @@ name: FSCA CIS Scraper Schedule
 
 on:
   schedule:
-    - cron: '0 1 * * *' # Run daily at 01:00 AM UTC
+    - cron: '0 1 1 1,4,7,10 *' # Run quarterly at 01:00 UTC on the 1st of Jan, Apr, Jul, Oct
   workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write # needed to push the updated database
 
 jobs:
   scrape-and-transform:
@@ -17,13 +20,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
 
       - name: Install Dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install dbt-sqlite
+          python -m pip install --upgrade pip uv
+          uv pip install --system click rich pandas duckdb httpx requests sqlalchemy pydantic playwright streamlit beautifulsoup4 lxml nest-asyncio dbt-sqlite
+          playwright install --with-deps chromium
 
       - name: Ensure Data Directory Exists
         run: mkdir -p data
@@ -35,6 +37,8 @@ jobs:
 
       - name: Run dbt Transformations
         run: |
+          # Set the database path for dbt
+          export DBT_FSCA_DB_PATH=$GITHUB_WORKSPACE/data/fsca_cis.db
           dbt run --project-dir dbt_fsca --profiles-dir dbt_fsca
 
       - name: Upload Database Artifact
@@ -47,7 +51,8 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/fsca_cis.db
-          # Commit only if there are changes to the DB file
-          git diff --quiet && git diff --staged --quiet || git commit -m "chore: auto-update scraper database [skip ci]"
+          # data/ and *.db are gitignored, so the DB must be force-added
+          git add -f data/fsca_cis.db
+          # Commit only if the DB file changed
+          git diff --staged --quiet || git commit -m "chore: auto-update scraper database [skip ci]"
           git push || echo "Git push skipped or failed"
